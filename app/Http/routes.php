@@ -49,3 +49,18 @@ Route::get('eliminar-registro/{id}', function ($id) {
 
     return 'Eliminado de forma permanente';
 });
+
+Route::get('delete-multiple-records', function () {
+    $books = App\Book::get();
+    return view('delete', compact('books'));
+});
+
+Route::delete('destroy', function (\Illuminate\Http\Request $request) {
+    $ids = $request->get('ids');
+
+    if (count($ids)) {
+        App\Book::destroy($ids);
+    }
+
+    return back();
+});

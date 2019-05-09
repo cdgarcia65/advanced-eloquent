@@ -64,3 +64,9 @@ Route::delete('destroy', function (\Illuminate\Http\Request $request) {
 
     return back();
 });
+
+Route::get('has-many', function () {
+    $categories = App\Category::get();
+
+    return view('relationship', compact('categories'));
+});

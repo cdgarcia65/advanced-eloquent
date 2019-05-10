@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Relationship (one to many)</title>
+    <title>has</title>
 </head>
 <body>
-    <h1>Relationship (one to many)</h1>
+    <h1>has</h1>
     <h2>Categories</h2>
 
     <ul>

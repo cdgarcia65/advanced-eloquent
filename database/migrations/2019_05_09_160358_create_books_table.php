@@ -17,6 +17,7 @@ class CreateBooksTable extends Migration
             $table->integer('category_id')->unsigned();
             $table->string('title');
             $table->text('description');
+            $table->enum('status', ['public', 'draft'])->default('draft');
 
             $table->foreign('category_id')->references('id')->on('categories')
                 ->onUpdate('cascade')

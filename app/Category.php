@@ -12,4 +12,8 @@ class Category extends Model
         return $this->hasMany(Book::class);
     }
 
+    public function getNumBooksAttribute()
+    {
+        return count($this->books);
+    }
 }

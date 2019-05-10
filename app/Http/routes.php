@@ -70,3 +70,9 @@ Route::get('has-many', function () {
 
     return view('relationship', compact('categories'));
 });
+
+Route::get('has', function () {
+    $categories = App\Category::has('books')->get();
+
+    return view('has', compact('categories'));
+});

@@ -28,4 +28,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Book::class);
     }
+
+    public function getManyBooksAttribute()
+    {
+        return $this->books()->lists('book_id')->toArray();
+    }
 }

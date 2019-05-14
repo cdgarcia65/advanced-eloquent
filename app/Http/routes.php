@@ -98,3 +98,19 @@ Route::get('many-to-many', function () {
 
     return view('many-to-many', compact('users'));
 });
+
+Route::get('many-to-many-2', function () {
+    $users = App\User::all();
+
+    return view('many-to-many-2.index', compact('users'));
+});
+
+Route::get('edit-many-to-many-2/{user_id}', [
+    'as' => 'getEdit',
+    'uses' => 'UserController@getEditManyToMany'
+]);
+
+Route::put('put-edit-many-to-many-2/user_id', [
+    'as' => 'putEdit',
+    'uses' => 'UserController@putEditManyToMany'
+]);

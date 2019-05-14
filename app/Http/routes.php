@@ -84,3 +84,11 @@ Route::get('where-has', function () {
 
     return view('where-has', compact('categories'));
 });
+
+Route::get('where-has-2', function () {
+    $categories = App\Category::whereHas('books', function ($query) {
+        $query->where('status', 'public');
+    })->get();
+
+    return view('where-has-2', compact('categories'));
+});

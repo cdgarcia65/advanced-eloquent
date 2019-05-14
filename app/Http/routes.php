@@ -92,3 +92,9 @@ Route::get('where-has-2', function () {
 
     return view('where-has-2', compact('categories'));
 });
+
+Route::get('many-to-many', function () {
+    $users = App\User::all();
+
+    return view('many-to-many', compact('users'));
+});
